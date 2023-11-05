@@ -246,17 +246,17 @@ mod tests {
         split_(&[(
             "abcd 123",
             &[
-                CmdArg{
+                CmdArg {
                     data: "abcd".into(),
                     is_quoted: false,
-                    is_braced: false
+                    is_braced: false,
                 },
-                CmdArg{
+                CmdArg {
                     data: "123".into(),
                     is_quoted: false,
-                    is_braced: false
-                }
-            ]
+                    is_braced: false,
+                },
+            ],
         )])
     }
 
@@ -270,11 +270,11 @@ mod tests {
                     is_quoted: true,
                     is_braced: false,
                 },
-                CmdArg{
+                CmdArg {
                     data: "abcd".into(),
                     is_quoted: false,
-                    is_braced: false
-                }
+                    is_braced: false,
+                },
             ],
         )]);
     }
@@ -289,10 +289,10 @@ mod tests {
                     is_quoted: false,
                     is_braced: true,
                 },
-                CmdArg{
+                CmdArg {
                     data: "abcd".into(),
                     is_quoted: false,
-                    is_braced: false
+                    is_braced: false,
                 },
             ],
         )]);
