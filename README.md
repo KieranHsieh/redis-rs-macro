@@ -1,4 +1,4 @@
-[![Build](https://github.com/KieranHsieh/redis-rs-macro/actions/workflows/ci.yml/badge.svg)](https://github.com/KieranHsieh/redis-rs-macro/actions/workflows/ci.yml)
+[![Build & Test](https://github.com/KieranHsieh/redis-rs-macro/actions/workflows/ci.yml/badge.svg)](https://github.com/KieranHsieh/redis-rs-macro/actions/workflows/ci.yml)
 
 # Redis Macro
 
