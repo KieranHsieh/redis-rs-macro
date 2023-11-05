@@ -1,0 +1,31 @@
+#!/bin/bash
+
+HAS_ISSUES=0
+FIRST_FILE=1
+
+for file in $(git diff --name-only --staged); do
+    FMT_RESULT="$(rustfmt --check $file 2>/dev/null || true)"
+    if [ "$FMT_RESULT" != "" ]; then
+        if [ $FIRST_FILE -eq 0 ]; then
+            echo -n ", "
+        fi  
+        echo -n "$file"
+        HAS_ISSUES=1
+        FIRST_FILE=0
+    fi
+done
+
+if [ $HAS_ISSUES -ne 0 ]; then
+    echo ". Your code has formatting issues in files listed above. Format your code with \`cargo fmt\`."
+    exit 1
+fi
+
+cargo test &> /dev/null
+TEST_RESULT="$?"
+
+if [ "$TEST_RESULT" != 0 ]; then
+    echo ". Your code does not pass tests. Run tests with \`cargo test\` to see which tests failed."
+    exit 1
+fi
+
+exit 0
