@@ -1,3 +1,5 @@
+[![Build](https://github.com/KieranHsieh/redis-rs-macro/actions/workflows/ci.yml/badge.svg)](https://github.com/KieranHsieh/redis-rs-macro/actions/workflows/ci.yml)
+
 # Redis Macro
 
 A simple macro to make creating Redis commands (From [redis-rs](https://github.com/redis-rs/redis-rs.git)) more readable.
